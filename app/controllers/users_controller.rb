@@ -6,12 +6,12 @@ class UsersController < ApplicationController
 
 
   before_action do
-  
+
     @user_id = session[:user_id]
     @current_user = User.find_by id: @user_id
-     if @current_user.nil?
-        redirect_to login_path
-     end
+    #  if @current_user.nil?
+    #     redirect_to login_path
+    #  end
      #
     #  @tweets = Tweet.all
     #                 .order("created_at desc")
@@ -70,23 +70,6 @@ end
     @current_user.destroy
     redirect_to login_path
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end

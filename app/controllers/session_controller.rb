@@ -1,6 +1,15 @@
 
 class SessionController < ApplicationController
+
+
   def new
+      @tweet = Tweet.new
+      @users = User.all
+      @tweets = Tweet.all
+                    .order("created_at desc")
+                    .page(1)
+                    .per(5)
+
   end
 
   def create

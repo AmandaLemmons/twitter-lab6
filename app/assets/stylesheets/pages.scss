@@ -1,5 +1,5 @@
 body {
-  background-color: lighten(#BDC3C7, 20%);
+  background-color: lighten(#1ABC9C, 45%);
   color: #9B59B6;
     h2{
       text-align: center;
@@ -8,14 +8,14 @@ body {
 .nav {
     padding-top: 1em;
     padding-bottom: 1em;
-    background-color: lighten(#9B59B6, 30%);
+    background-color: lighten(#9B59B6, 20%);
     height: 120%;
   a {
     padding-left: 2em;
     margin: auto;
     font-decoration: none;
     font-size: 1.2em;
-    color: lighten(#1ABC9C, 30%);
+    color: white;
   }
   #delete_account {
     float: right;
