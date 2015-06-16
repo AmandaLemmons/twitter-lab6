@@ -10,9 +10,9 @@ class SessionController < ApplicationController
     user = User.find_by username: username
     if (user) && (user.authenticate password)
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to user
     else
-      flash.now[:alert] = "TRY AGAIN"
+      flash.now[:danger] = "Try again. Invalid email/password combination"
       render :new
     end
   end

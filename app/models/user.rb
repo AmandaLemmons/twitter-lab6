@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   acts_as_followable
   acts_as_follower
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
+  paginates_per 5
 
   validates  :username, presence: true, length:{maximum: 50},  uniqueness: { case_sensitive: false }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -11,8 +11,6 @@ class TweetsController < ApplicationController
       end
     end
 
-
-
   def new
     @tweet = Tweet.new
   end
@@ -21,6 +19,8 @@ class TweetsController < ApplicationController
   def dashboard
     @tweet = Tweet.new
     @users = User.all
+
+
   end
 
   def create

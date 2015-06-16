@@ -1,12 +1,64 @@
 
-<% provide(:content, @user.username) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.username %>
-      </h1>
-    </section>
-  </aside>
+  <% provide(:content, @current_user.username) %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1>
+          <%= gravatar_for @current_user %>
+          <%= @current_user.username %>
+        </h1>
+      </section>
+    </aside>
+  </div>
+
+  <h6> You have some very delicious chatter going on </h6>
+  <br>
+
+  <h4>  You follow <%= pluralize @current_user.follow_count, "Users" %> </h4>
+
+  <div class="col-md-6">
+    <h3>Following:</h3>
+      <ul class="list-group">
+        <% @current_user.all_following.each do |user| %>
+          <li class="list-group-item">
+          <%= link_to "#{user.username}", unfollow_path(id: user.id), class:"btn btn-primary btn-md" %>
+        </li>
+        <%end%>
+      </ul>
+  </div>
+
+
+  <div class="col-md-6">
+    <h3>Check 'em out:</h3>
+      <ul class="list-group">
+        <% @users.each do |user| %>
+          <li class="list-group-item">
+           <%= link_to "#{user.username}", follow_path(id: user.id), class:"btn btn-primary btn-sm" %>
+          </li>
+       <%end%>
+     </ul>
+  </div>
+  <br>
+
+  <br clear="all"/>
+  <h2> Recent Posts </h2>
+  <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% @tweets.each do |tweet| %>
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <strong><%= tweet.content %></strong>
+        <br>
+        <em>Posted by: <%= tweet.user.username %></em>
+        Posted: <%= distance_of_time_in_words_to_now tweet.created_at %>
+        <br>
+        <%= link_to 'Delete', delete_tweet_path(id: tweet.id), class: "btn btn-primary btn-sm", method: 'delete', data: {confirm: 'Are you sure!?!?!'} %>
+        <br>
+      </div>
+      </div>
+    <%end%>
+  </div>
+  <div class:"btn">
+    <%= paginate @tweets %>
+  </div>
 </div>

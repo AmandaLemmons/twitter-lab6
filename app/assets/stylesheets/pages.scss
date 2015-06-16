@@ -1,49 +1,58 @@
-
-.nav a {
-  padding-left: 2em;
-  margin: auto;
-  font-decoration: none;
-  font-size: 1.5em;
-  color: white;
+body {
+  background-color: lighten(#BDC3C7, 20%);
+  color: #9B59B6;
+    h2{
+      text-align: center;
+    }
+  }
+.nav {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: lighten(#9B59B6, 30%);
+    height: 120%;
+  a {
+    padding-left: 2em;
+    margin: auto;
+    font-decoration: none;
+    font-size: 1.2em;
+    color: lighten(#1ABC9C, 30%);
+  }
+  #delete_account {
+    float: right;
+    padding-right: 2em;
+  }
 }
 
 .center {
   text-align: center;
 }
 
-article {
-  width: 80%;
-  float: left;
+article.tweets {
+  width: 60%;
+  margin: auto;
 }
 aside {
-  width: 10%;
-  float: left;
+  float: right;
+
+  .follow {
+     width: 0%;
+     font-size: 1em;
+   }
+ ul {
+   list-style: none;
+   }
+ li {
+   margin-left: 3em;
+ }
 }
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
+
+.btn {
+  background-color: lighten(#1ABC9C, 30%);
+  :hover {
+    background-color: lighten(#9B59B6, 30%);
   }
 }
+
 
 .gravatar {
   float: left;
@@ -53,3 +62,24 @@ aside {
 .gravatar_edit {
   margin-top: 15px;
 }
+
+
+.notice {
+  background: #1ABC9C;
+  border: 1px solid darken(#1ABC9C, 15%);
+  color: #ECF0F1;
+  padding: 1em;
+}
+
+div.follow {
+    width: 45%;
+    float: left;
+    border:red;
+
+  }
+  h3 {
+    border: solid, 1px, #1ABC9C;
+  }
+  ul{
+    list-style: none;
+  }

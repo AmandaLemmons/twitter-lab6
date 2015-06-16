@@ -1,10 +1,10 @@
-<article>
-<div class="col-md-10 col-md-offset-1">
-    <h4> Hello <%= @current_user.username.upcase %> </h4>
+<article class ="tweets">
 
+    <h2> Hello, <%= @current_user.username.upcase %> </h2>
+    <h4> What's on your mind today? </h4>
     <%= simple_form_for @tweet do |f| %>
       <%= f.input :content, as: :text %>
-      <%= f.submit "Publish your tweet", class: 'btn btn-primary' %>
+      <%=f.submit "Publish your tweet", class: 'btn btn-primary' %>
       <br>
       <%end%>
       <br>
@@ -16,25 +16,16 @@
             <div class="panel-body">
               <strong><%= tweet.content %></strong>
               <br>
-              <em>Posted by: <%= tweet.user.username %></em>
+              <em> Posted by: <%= tweet.user.username %></em>
+              <br>
               Posted: <%= distance_of_time_in_words_to_now tweet.created_at %>
               <br>
               <%= link_to 'Delete', delete_tweet_path(id: tweet.id), class: "btn btn-primary btn-sm", method: 'delete', data: {confirm: 'Are you sure!?!?!'} %>
             </div>
             </div>
           <%end%>
+      <div class:"btn">
         <%= paginate @tweets %>
-</div>
+      </div>
+
 </article>
-
-<aside>
-
-  <% @users.each do |user| %>
-  <ul>
-    <li> <%= link_to "#{user.username}", follow_path %> </li>
-  </ul>
-  <%end%>
-
-
-
-</aside>
