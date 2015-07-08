@@ -1,14 +1,14 @@
-<div class="col-sm-6 .col-md-2" id="frontpage" >
+<div class="col-sm-6" id="frontpage" >
 
     <h1>Chatter</h1>
     <h6> What do you have to say? </h6>
     <%= form_tag auth_path, method: :post do %>
-      <div>
+      <div class="label">
         <%= label_tag :username %>
         <%= text_field_tag :username, "", class: "form-control" %>
         <br>
       </div>
-      <div>
+      <div class="label">
         <%= label_tag :password %>
         <%= password_field_tag :password, "", class: "form-control" %>
         <br>
@@ -17,12 +17,12 @@
         <%= submit_tag "Log In", class: "btn btn-primary btn-lg"%>
         <br>
         <br>
-        <p>Still don't have an account? Whatcha waitin' for? <%=link_to 'Sign up now', signup_path %> </p>
+        <h6 >Still don't have an account? Whatcha waitin' for? <%=link_to 'Sign up now', signup_path %> </h6>
   </div>
 </div>
     <% end %>
 
-<div class= "col-sm-5 .col-md-2">
+<!-- <div class= "col-sm-5 .col-md-2">
   <% @tweets.each do |tweet| %>
         <div class="panel panel-default">
         <div class="panel-body">
@@ -35,4 +35,4 @@
         </div>
         </div>
       <%end%>
-  </div>
+  </div> -->

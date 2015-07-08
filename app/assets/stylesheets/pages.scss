@@ -5,7 +5,8 @@ body {
   h1 {
       text-align: center;
       font-family: 'Clicker Script', cursive;
-        color: #b6a754;
+      color: #b6a754;
+      font-size: 2em;
     }
     h3 {
       text-align: left;
@@ -52,11 +53,14 @@ body {
     text-align: center;
     font-size: 24px;
   a {
-    padding-left: 2em;
+    padding-right: 2em;
     margin: auto;
     font-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: white;
+  }
+  a:hover {
+    color: #77ba9b;
   }
   #delete_account {
     float: right;
@@ -125,6 +129,26 @@ div.follow {
   }
 
   #frontpage {
-    background-color: #ECF0F1;
-    margin-left: 1%;
+    background-color: #3b5998;
+    margin-left: 25%;
+    font-size: 1.5em;
+  h6 {
+      font-family: 'Clicker Script', cursive;
+      color: #b6a754;
+      font-size: 26px;
+    }
   }
+
+  .label {
+      font-family: 'EB Garamond', serif;
+      color: #77ba9b;
+      font-size: 1em;
+  }
+
+
+  a {
+    color: #77ba9b;}
+    a:hover {
+      color: #639bf1;
+      text-decoration: none;
+    }
