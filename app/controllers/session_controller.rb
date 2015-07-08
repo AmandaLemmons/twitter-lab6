@@ -13,6 +13,9 @@ class SessionController < ApplicationController
   end
 
   def create
+    @tweets = Tweet.all
+    # added the above comment bc had an error... is it correct?
+
     username = params[:username]
     password = params[:password]
 

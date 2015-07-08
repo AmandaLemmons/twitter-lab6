@@ -1,15 +1,56 @@
 body {
-  background-color: lighten(#1ABC9C, 45%);
-  color: #9B59B6;
-    h2{
+  background-color: #293e6a;
+  color: white;
+
+  h1 {
       text-align: center;
+      font-family: 'Clicker Script', cursive;
+        color: #b6a754;
     }
+    h3 {
+      text-align: left;
+      font-family: 'Clicker Script', cursive;
+      color: #b6a754;
   }
+  h4 {
+    text-align: left;
+    font-family: 'Clicker Script', cursive;
+    font-size: 30px;
+    color: #b6a754;
+
+}
+  }
+
+    .panel {
+      background-color: #639bf1;
+      border: solid 1px #639bf1;
+      height: 75%;
+      p {
+        color: white;
+        font-family: 'EB Garamond', serif;
+      }
+      h5{
+        font-family: 'EB Garamond', serif;
+        font-size: 24px;
+        text-align: center;
+      }
+      h6 {
+        font-family: 'EB Garamond', serif;
+        font-size: 18px;
+        float: left;
+        display: inline;
+        padding-right: 50%;
+      }
+    }
+
 .nav {
     padding-top: 1em;
     padding-bottom: 1em;
-    background-color: lighten(#9B59B6, 20%);
+    background-color:#639bf1;
     height: 120%;
+    font-family: 'Clicker Script', cursive;
+    text-align: center;
+    font-size: 24px;
   a {
     padding-left: 2em;
     margin: auto;
@@ -30,6 +71,7 @@ body {
 article.tweets {
   width: 60%;
   margin: auto;
+
 }
 aside {
   float: right;
@@ -47,10 +89,8 @@ aside {
 }
 
 .btn {
-  background-color: lighten(#1ABC9C, 30%);
-  :hover {
-    background-color: lighten(#9B59B6, 30%);
-  }
+  background-color: #77ba9b;
+  border: solid 1px #77ba9b;
 }
 
 
@@ -82,4 +122,9 @@ div.follow {
   }
   ul{
     list-style: none;
+  }
+
+  #frontpage {
+    background-color: #ECF0F1;
+    margin-left: 1%;
   }

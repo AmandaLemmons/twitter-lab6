@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show', as: :user
   get '/signup' => 'users#new', as: :signup
   post '/users' => 'users#create', as: :users
+  delete '/users/:id' => 'users#destroy', as: :delete_user
+
+
   get '/follow/:id' => 'users#follow', as: :follow
   get '/unfollow/:id' => 'users#unfollow', as: :unfollow
-  delete '/users/:id' => 'users#destroy', as: :delete_user
+
 
 
   post 'posts' => 'posts#create', as: :posts

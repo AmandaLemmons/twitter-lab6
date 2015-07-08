@@ -4,11 +4,22 @@ class UsersController < ApplicationController
 #   :showing_followers
 
 
+  before_action :auth_user!, except: [:new, :create]
 
-  before_action do
-
+  def auth_user!
     @user_id = session[:user_id]
     @current_user = User.find_by id: @user_id
+
+     if @current_user.nil?
+        redirect_to login_path
+     else
+
+# this is my idea to mke them auto follow at least 1 person...
+
+      user = User.find(params[:id])
+      @current_user.follow(@current_user)
+    end
+  end
     #  if @current_user.nil?
     #     redirect_to login_path
     #  end
@@ -17,7 +28,7 @@ class UsersController < ApplicationController
     #                 .order("created_at desc")
     #                 .page(params[:page])
 
-  end
+
 
   def new
     @user = User.new
@@ -37,16 +48,14 @@ class UsersController < ApplicationController
                 .reject{|user| @current_user.following? user}
                 .reject{|user| @current_user == user}
 
-end
-# def show
-#   :showing_followers
-# end
+end 
 
 
   def create
     @user = User.new params.require(:user).permit(:username, :password, :email, :password_confirmation, :id)
     if @user.save
         flash[:success] = "Welcome to this coolio app!"
+        session[:user_id] = @user.id
         redirect_to @user
       else
         render :new
