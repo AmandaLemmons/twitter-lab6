@@ -53,7 +53,7 @@ body {
     text-align: center;
     font-size: 24px;
   a {
-    padding-right: 2em;
+    padding-right: 1em;
     margin: auto;
     font-decoration: none;
     font-size: 1.5em;
@@ -92,15 +92,23 @@ aside {
  }
 }
 
-.btn {
-  background-color: #77ba9b;
-  border: solid 1px #77ba9b;
-}
+  .btn {
+    background-color: #77ba9b;
+    border: solid 1px #77ba9b;
+    color: white;
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+  }
+  .btn:hover {
+    background-color: #b6a754;
+    border: solid 1px #b6a754;
+    color: white;
+  }
 
 
 .gravatar {
-  float: left;
-  margin-right: 10px;
+
+  padding-right: 10px;
 }
 
 .gravatar_edit {
@@ -115,10 +123,14 @@ aside {
   padding: 1em;
 }
 
-div.follow {
-    width: 45%;
-    float: left;
-    border:red;
+  .list-group-item {
+    background-color: #77ba98;
+    border: solid 1px #3b5998;
+    a {
+     color: #3b5998;
+     font-family: 'EB Garamond', serif;
+     font-size: 1.5em;
+    }
 
   }
   h3 {
@@ -151,4 +163,28 @@ div.follow {
     a:hover {
       color: #639bf1;
       text-decoration: none;
+    }
+
+    #welcome {
+      h1 {
+      color:white;
+      font-size: 4em;
+      }
+    }
+
+    .following {
+      margin: auto;
+      padding-left: 30px;
+    }
+
+    .user_info {
+      text-align: center;
+      margin: auto;
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+
+    .pagination {
+      text-align:center;
     }

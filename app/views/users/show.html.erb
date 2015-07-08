@@ -1,22 +1,16 @@
 
   <% provide(:content, @current_user.username) %>
   <div class="row">
-    <aside class="col-md-4">
+
       <section class="user_info">
         <h1>
-          <%= gravatar_for @current_user %>
-          <%= @current_user.username %>
-        </h1>
+          Welcome <%= @current_user.username.capitalize %>.
+          You follow <%= pluralize @current_user.follow_count, "chatters" %> </h1>
       </section>
-    </aside>
   </div>
 
-  <h6> . </h6>
-  <br>
 
-  <h4>  You follow <%= pluralize @current_user.follow_count, "Users" %> </h4>
-
-  <div class="col-md-3">
+  <div class="col-md-3 following">
     <h3>Following:</h3>
       <ul class="list-group">
         <% @current_user.all_following.each do |user| %>
@@ -35,28 +29,28 @@
        <%end%>
      </ul>
   </div>
+
   <br>
 
-  <h2> Recent Posts </h2>
+
   <div class="row">
   <div class="col-md-6 col-md-offset-2">
+      <h3> Recent Posts </h3>
     <% @tweets.each do |tweet| %>
       <div class="panel panel-default">
       <div class="panel-body">
-        <strong><%= tweet.content %></strong>
+        <h5><strong><%= tweet.content %></strong></h5>
         <br>
         <em>Posted by: <%= tweet.user.username %></em>
-        Posted: <%= distance_of_time_in_words_to_now tweet.created_at %>
         <br>
-        <%= link_to 'Delete', delete_tweet_path(id: tweet.id), class: "btn btn-primary btn-sm", method: 'delete', data: {confirm: 'Are you sure!?!?!'} %>
+        Posted: <%= distance_of_time_in_words_to_now tweet.created_at %>
+
         <br>
       </div>
       </div>
     <%end%>
+    <br clear="all"/>
+    <div class:"btn">
+      <%= paginate @tweets %>
+    </div>
   </div>
-
-  <br clear="all"/>
-  <div class:"btn">
-    <%= paginate @tweets %>
-  </div>
-</div>
